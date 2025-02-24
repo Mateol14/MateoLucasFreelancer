@@ -1,0 +1,282 @@
+/* 1 REM = 10PX */
+/*Reglas BASICAS*/
+:root {
+    --blanco: #ffffff;
+    --oscuro: #212121;
+    --primario: #ffc107;
+    --secundario: #0097a7;
+    --gris: #757575;
+}
+html{
+    box-sizing: border-box;
+    font-size: 62.5%;
+    scroll-snap-type: y mandatory;
+}
+
+.servicios, .navBar, .formulario{
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+body{
+    font-family: "Krub", serif;
+    font-size: 16px;
+    background-image: linear-gradient(to top, #dfe9f3 0%, var(--blanco)100%) ;
+}
+
+/*TITLULOS*/
+h1{
+    font-size: 3.8rem;
+}
+
+h2{
+    font-size: 2.8rem;
+}
+
+h3{
+    font-size: 1.8rem;
+}
+
+h1,h2,h3 {
+    text-align: center;
+}
+/*TITLULOS*/
+
+.button {
+    text-align: center;
+    width: 90%;
+    border-radius: .5rem;
+    text-transform:uppercase ;
+    font-weight: 700;
+    font-size: 2rem;
+    margin-top: 4rem;
+    padding: 1rem 3rem;
+    text-decoration: none;
+    color: var(--blanco);
+    background-color: var(--secundario);
+    border: none;
+}
+
+.button:hover {
+cursor: pointer;
+}
+
+.sombra {
+
+    box-shadow: 0px 5px 15px 0px rgba(112,112,112,0.40);
+background-color: var(--blanco);
+padding: 2rem;
+border-radius: 1rem;
+}
+/*Reglas BASICAS*/
+
+/*UTILIDAD*/
+.w-100 {
+    width: 100%;
+}
+.alinearDerecha{
+grid-column: -2 / -1;
+justify-content:flex-end;
+}
+
+.flex{
+display: flex;
+}
+/*INDEX CSS*/
+
+.ubicacion {
+display: flex;
+align-items: center;
+}
+.ubicacion svg{
+    color: var(--primario);
+
+}
+.subTituloInicio{
+    text-align: center;
+    font-size: 3.8rem;
+    color: var(--blanco);
+}
+
+.hero{
+    background-image: url(images/hero.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 450px;
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.contenidoHero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.7); /*ANTERIOR*/
+    width: 100%;
+    height: 100%;
+}
+
+.contenidoHero h2, .contenidoHero p{
+color: var(--blanco);
+}
+
+.container{
+    margin: 0rem auto 0rem auto;
+    max-width: 120rem;
+}
+/*INDEX CSS*/
+/*NAV BAR CSS*/
+.navBg{
+    background-color: var(--secundario);
+}
+.navBar{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.navBar a{
+    padding: 1rem;
+    font-size: 2rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--blanco);
+}
+
+.navBar a:hover{
+    background-color: var(--primario);
+}
+/*NAV BAR CSS FIN*/
+
+/*SERVICIOS INDEX*/
+
+
+.servicio{
+display: flex;
+flex-direction: column;
+align-items: center;}
+
+.servicio h3{
+color: var(--secundario);
+font-weight: 500;
+}
+.servicio p {
+line-height: 2;
+text-align: center;
+}
+.servicio .iconos{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 15rem;
+    width: 15rem;
+    background-color: var(--primario);
+    border-radius: 50%;
+}
+
+    /*Contacto CSS*/
+.formulario {
+background-color: var(--gris);
+width: min( 60rem, 100% ); /*MIN UTILIZA EL VALOR MAS PEQUENO*/
+margin: 0 auto;
+padding: 2rem;
+border-radius: 1rem;
+}
+
+.formulario legend {
+    color: var(--primario);
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+.formulario fieldset {
+    border: none;
+}
+
+.campo{
+margin-bottom: 1rem;
+
+}
+
+.campo label{
+color: var(--blanco);
+font-weight: 700;
+margin-bottom: .5rem;
+display: block;
+}
+
+.campo textarea{
+    height: 20rem;
+}
+
+
+
+.inputText {
+width: 100%;
+border: none;
+padding: 1.5rem;
+border-radius: .5rem;
+}
+/*FORMULARIO FIN*/
+
+/*FOOTER INICIO*/
+.footer{
+text-align: center;
+}
+
+    /*MEDIA QUERIES*/
+
+    /*CELULAR QUERIES*/
+@media (min-width: 480px) {
+    .navBar{
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: row;
+    }
+}
+/*TABLET QUERIES*/
+@media (min-width: 768px ) {
+    .button {
+        text-align: center;
+        width: auto;
+}
+    .servicios {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 1rem;
+}
+
+.w-100 {
+    width: auto;
+}
+    }
+
+    .containerCampos{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: auto auto 20rem;
+        column-gap: 1rem;
+        }
+
+.campo:nth-child(3){
+            grid-column: 1 / 3;
+        }
+.campo:nth-child(4){
+            grid-column: 1 / 3;
+        }
+/*NOTEBOOK QUERIES*/
+@media (min-width: 1140px ) {
+
+    }
+/*PC QUERIES*/
+@media (min-width: 1400px ) {
+
+    }
